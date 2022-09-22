@@ -1,0 +1,35 @@
+@mixin flex-el($direction: row, $justify: flex-start, $align: stretch, $gap: 10px, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+  flex-wrap: $wrap;
+}
+
+@mixin flex-content($flex-direction: row, $justify-content: center, $align-items: center, $wrap: nowrap, $gap: 0) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-wrap: $wrap;
+  gap: $gap;
+}
+
+@mixin button( $width: auto ) {
+  width: $width;
+  padding: 20px 30px;
+  border: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(248, 90, 138, 0.65);
+  background: $secondary-color;
+  color: white;
+  transition: $transition-short;
+}
+
+@mixin hover-el($color: white, $bg_color: #580424) {
+  color: $color;
+  background: $bg_color;
+}

@@ -1,0 +1,45 @@
+@import '../../assets/_mixins';
+@import '../../assets/_variables';
+
+.TvCard {
+  @include flex-content(column, center, center, nowrap, $gap: 5px);
+  height: 230px;
+  min-width: 130px;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.35s;
+  text-shadow: 2px 0 0 #000;
+  filter: grayscale(0.6);
+  &:hover {
+    filter: grayscale(0);
+  }
+  .title {
+    font-size: 1.2rem;
+    color: ghostwhite;
+    line-height: 20px;
+    text-transform: uppercase;
+    padding: 10px
+  }
+
+  .date {
+    margin: 0;
+    font-size: 0.8rem;
+    color: darkgray;
+  }
+
+  .average {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    &::before {
+      content: 'Average: ';
+      font-size: 0.8rem;
+    }
+  }
+
+  &:hover {
+    background: white;
+  }
+}

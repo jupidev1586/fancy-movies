@@ -1,0 +1,21 @@
+.MainSection {
+  padding: 0 30px 30px;
+  display: block;
+  background: #252525;
+  height: auto;
+  overflow-x: hidden;
+  align-items: center;
+  h2 {
+    text-transform: uppercase;
+    font-size: 16px;
+    &.most-pop {
+      font-size: 21px;
+    }
+  }
+  @media (min-width: 992px) {
+    display: flex;
+    padding: 0 30px;
+    height: 100vh;
+  }
+}
+

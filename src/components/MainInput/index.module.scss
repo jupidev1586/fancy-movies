@@ -1,0 +1,43 @@
+.MainInput {
+  height: 40px;
+  display: flex;
+  position: fixed;
+  top: 30px;
+  right: 15px;
+  box-shadow: 0 0 0 black;
+  border-radius: 8px;
+  transition: all .35s;
+  z-index: 9999;
+  @media (min-width: 992px) {
+    right: 30px;
+  }
+  input {
+    height: 40px;
+    padding: 0;
+    border: 0;
+    outline: none;
+    font-weight: bold;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    width: 0;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    top: 5px;
+    left: 13px;
+    &.search {
+      width: 240px;
+      padding: 0 12px;
+    }
+  }
+  button {
+    width: 50px;
+    height: 50px;
+    border: 0;
+    font-weight: bold;
+    background-color: white;
+    border-left: 1px solid lightgrey;
+    cursor: pointer;
+    border-radius: 100%;
+  }
+}
