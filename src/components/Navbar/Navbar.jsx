@@ -1,14 +1,24 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import styles from './index.module.scss';
 
 const Navbar = () => {
   return (
     <div className={ styles.Navbar }>
-      <ul>
+       <ul>
+        <li>
+          <a href="#series-list">
+            Series 
+          </a>
+        </li>
+        <li>
+          <a href="#movie-list">
+            Movies 
+          </a>
+        </li>
         <li>
           <a href="#movie-entity">
-            <FontAwesomeIcon icon="fa-duotone fa-film" /> Movie section 
+            Search Movie 
           </a>
         </li>
       </ul>

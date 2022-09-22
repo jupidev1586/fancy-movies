@@ -12,7 +12,7 @@ const SeriesSection = ({ setCardData }) => {
   }, []);
 
   return (
-    <div className={styles.SeriesSection}>
+    <div className={styles.SeriesSection} id="series-list">
       <TvSeriesList seriesList={ seriesData.results } setCardData={ setCardData }/>
     </div>
   )

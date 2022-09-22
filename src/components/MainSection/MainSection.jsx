@@ -20,7 +20,7 @@ const MainSection = ({ modalData }) => {
   }, []);
  
   return (
-    <div className={ styles.MainSection }>
+    <div className={ styles.MainSection } id="movie-list">
       <div className="d-flex">
         <h2 className="mt-0 most-pop">Most Popular</h2>
         { movieLists.popular && <MainCard data={ movieLists.popular[0] } /> }

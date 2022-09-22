@@ -4,8 +4,8 @@
 .TvSerieEntity {
   @media (min-width: 768px) {
     @include flex-content(row, flex-start, center);
+    padding: 15px 0 0;
   }
-  padding: 0 0 60px;
   background: $dark-color2;
   img {
     width: 100%;
@@ -23,6 +23,7 @@
       }
       font-size: 2.6rem;
       line-height: 40px;
+      margin: -25px 0 0;
     }
     
     .description {

@@ -42,9 +42,11 @@ function App() {
     <div className={styles.App} id="appTop">
       <Navbar />
       <MainInput input={input} setInput={setInput} />
-      <TvSerieEntity cardData={ cardData }/>
-      <h3 className={styles.darkBg}>POPULAR TV SERIES</h3>
+      
+      
       <SeriesSection setCardData={ setCardData }/>
+      <h3 className={styles.darkBg}>POPULAR TV SERIES</h3>
+      <TvSerieEntity cardData={ cardData }/>
       <MainSection />
       { 
         <MovieEntity movieID={input ? input : '13'} />
