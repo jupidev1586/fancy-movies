@@ -1,11 +1,11 @@
 import { memo } from 'react';
 import MainCard from '../MainCard';
-import './index.scss';
+import styles from './index.module.scss';
 
 const MovieList = ({ data, className }) => {
   
   return (
-    <div className={className}>
+    <div className={`${styles.MovieList} ${className}`}>
       {
         data.map((item, index) => <MainCard 
           modalData={item}
