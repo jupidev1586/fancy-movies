@@ -18,5 +18,18 @@
     align-items: flex-start;
     gap: 30px;
   }
+  .dflex {
+    display: flex;
+    flex-direction: column;
+    height: 710px;
+    padding: 0;
+    margin-top: 60px;
+    @media (min-width: 992px) {
+      .dflex {
+        margin-top: 0;
+        padding: 0 30px;
+      }
+    }
+  }
 }
 

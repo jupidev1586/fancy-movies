@@ -1,23 +1,15 @@
 .topRated,
 .upcoming,
 .MovieList
-  {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-grow: 1;
-    overflow-y: hidden;
-    overflow-x: scroll;
-  }
-
-  .d_flex {
-    display: flex;
-    flex-direction: column;
-    height: 710px;
-    padding: 0;
-    margin-top: 60px;
-  }
-
+{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-grow: 1;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  
+}
 @media (min-width: 992px) {
   .topRated,
   .upcoming,
@@ -25,10 +17,6 @@
   {
     margin-top: 0;
     max-width: 1440px;
-  }
-
-  .d_flex {
-    margin-top: 0;
-    padding: 0 30px;
+    
   }
 }

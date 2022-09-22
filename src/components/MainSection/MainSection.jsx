@@ -21,12 +21,12 @@ const MainSection = ({ modalData }) => {
  
   return (
     <div className={ styles.MainSection } id="movie-list">
-      <div className={ styles.d_flex }>
+      <div className={ styles.dflex }>
         <h2 className="most-pop">Most Popular</h2>
         { movieLists.popular && <MainCard data={ movieLists.popular[0] } /> }
       </div>
       
-      <div className={ styles.d_flex }>
+      <div className={ styles.dflex }>
         <h2 className="">Top Rated:</h2>
         { movieLists.topRated && <MovieList data={movieLists.topRated} className="topRated" /> }
         <h2>Upcoming:</h2>
