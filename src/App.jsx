@@ -38,10 +38,19 @@ function App() {
   const isModalVisible = useSelector(state => state.isModalVisible)
   const dispatch = useDispatch();
   
+
+  const [movieTitle, setMovieTitle] = useState("Forrest Gump");
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    setMovieTitle(input);
+  };
+
+
   return (
     <div className={styles.App} id="appTop">
       <Navbar />
-      <MainInput input={input} setInput={setInput} />
+      <MainInput input={input} setInput={setInput} onSubmit={onSubmit} />
       
       
       <SeriesSection setCardData={ setCardData }/>
@@ -49,7 +58,7 @@ function App() {
       <TvSerieEntity cardData={ cardData }/>
       <MainSection />
       { 
-        <MovieEntity movieID={input ? input : '13'} />
+        <MovieEntity movieTitle={movieTitle} />
       }
       
       {

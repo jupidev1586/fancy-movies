@@ -3,13 +3,16 @@ import { GET } from '../../utils/api.js';
 
 import styles from './index.module.scss';
 
-const MovieEntity = ({ movieID, input }) => {
+const MovieEntity = ({ movieTitle, input }) => {
   const [movieData, setMovieData] = useState({});
 
   useEffect(() => {
-    GET('movie', movieID)
-      .then(data => setMovieData(data))
-  }, [movieID])
+    GET("search", "movie", `&query=${movieTitle}&page=1`).then((data) => {
+      if (data.results[0] && data.results[0].adult === false) {
+        setMovieData(data.results[0]);
+      } 
+    });
+  }, [movieTitle]);
 
   const {
     poster_path,
