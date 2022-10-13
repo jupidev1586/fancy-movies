@@ -50,7 +50,7 @@ function App() {
   return (
     <div className={styles.App} id="appTop">
       <Navbar />
-      <MainInput input={input} setInput={setInput} onSubmit={onSubmit} />
+      <MainInput input={input} setInput={setInput} onSubmit={onSubmit} setMovieTitle={setMovieTitle} />
       
       
       <SeriesSection setCardData={ setCardData }/>
