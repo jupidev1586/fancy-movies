@@ -59,6 +59,7 @@ const MainInput = ({ input, setInput, onSubmit, onHandleSubmit, setMovieTitle, i
                         key={movie.id}
                         onClick={() => {
                           setMovieTitle(movie.title);
+                          setInput("");
                         }}
                       >
                         {movie.title}
