@@ -38,6 +38,7 @@ function App() {
   const isModalVisible = useSelector(state => state.isModalVisible)
   const dispatch = useDispatch();
   
+  const [isOn, setIsOn] = useState(false);
 
   const [movieTitle, setMovieTitle] = useState("Forrest Gump");
 
@@ -46,11 +47,17 @@ function App() {
     setMovieTitle(input);
   };
 
+  const onHandleSubmit = (e) => {
+    e.preventDefault();
+    !isOn ? setIsOn(true) : setIsOn(false);
+    setInput("");
+    setMovieTitle(input);
+  }
 
   return (
     <div className={styles.App} id="appTop">
       <Navbar />
-      <MainInput input={input} setInput={setInput} onSubmit={onSubmit} setMovieTitle={setMovieTitle} />
+      <MainInput input={input} setInput={setInput} onSubmit={onSubmit} setMovieTitle={setMovieTitle} onHandleSubmit={onHandleSubmit} isOn={isOn} />
       
       
       <SeriesSection setCardData={ setCardData }/>

@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { GET } from "../../utils/api";
+// import { GETSEARCH } from "../../utils/api";
 import styles from './index.module.scss';
 
-const MainInput = ({ input, setInput, onSubmit, setMovieTitle }) => {
-  // const selectRef = useRef(null);
+const MainInput = ({ input, setInput, onSubmit, onHandleSubmit, setMovieTitle, isOn }) => {
 
   const [isInputVisible, setInputVisibility] = useState(false);
-  const [isOn, setIsOn] = useState(false);
+  
   const [isData, setIsData] = useState('');
   
 
@@ -20,12 +19,9 @@ const MainInput = ({ input, setInput, onSubmit, setMovieTitle }) => {
 
   useEffect(() => {
     if (input) {
-      GET(
-        "search",
-        "movie",
-        `&language=en-US`,
-        `&query=${input}&page=1`
-      ).then((data) => {
+      fetch(`https://api.themoviedb.org/3/search/movie?api_key=ad6baf64ad75ee341315fda666f2d48e&language=en-US&query=${input}&page=1&include_adult=false`)
+      .then((res) => res.json())
+      .then((data) => {
         setIsData(data);
         console.log('data===>', data);
         console.log('isData===>', isData)
@@ -33,63 +29,55 @@ const MainInput = ({ input, setInput, onSubmit, setMovieTitle }) => {
     }
   }, [input]);
 
-  
-
-  const onHandleSubmit = (e) => {
-    e.preventDefault();
-    !isOn ? setIsOn(true) : setIsOn(false);
-    setInput("");
-    console.log('isData', isData)
-    // input === e.target.value && setInput(e.target.value);
-  }
 
   const onHandleInput = (e) => setInput(e.target.value);
-
-  
-
+ 
   return (
-    <form className={styles.MainInput} onSubmit={onSubmit}>
-       {
-        isInputVisible && (
-          
-          <>
-            <input className={isOn ? styles.search : ''} value={input} onChange={onHandleInput} type="text" />
+    <div className={styles.MainInput}>
+      <form className={styles.form} onSubmit={onSubmit}>
+        {
+          isInputVisible && (
             
-            <button type="button" onClick={onHandleSubmit}>
-              <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
-            </button>
+            <>
+              <input className={isOn ? styles.search : ''} value={input} onChange={onHandleInput} type="text" placeholder="Search Movie by name.."/>
+              
+              <button type="button" onClick={onHandleSubmit}>
+                <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
+              </button>
+              
+            </>
 
-            {/* {input.length > 1 &&
-              isData.results &&
-              isData.results.length > 0 ? (
-              <div className={``}>
-                <ul>
-                  {isData.results.map((movie) => {
+          )
+        }
+        <div className={styles.listAutocomplete}>
+          {input.length > 1 &&
+            isData.results &&
+            isData.results.length > 0 && (
+              
+              <ul>
+                {
+                  isData.results.map((movie) => {
                     return (
                       <li
                         key={movie.id}
                         onClick={() => {
                           setMovieTitle(movie.title);
-                          window.scrollTo(0, 0);
                         }}
                       >
                         {movie.title}
                       </li>
                     );
-                  })}
-                </ul>
-              </div>
-            ) : (
-              <div className={``}>
-                <p>Non ci sono risultati..</p>
-              </div>
-            )} */}
-
-          </>
-          
-        )
-      }
-    </form>
+                  })
+                }
+              </ul>
+                  
+            ) 
+          }
+        </div>
+      </form>
+      
+      
+    </div>
   )
 }
 
