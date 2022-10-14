@@ -12,4 +12,4 @@ const GETSERIES = async(type, section, ext) => {
 }
 
 
-export { GET, GETSEARCH, GETSERIES };
+export { GET, GETSERIES };

@@ -51,7 +51,7 @@ function App() {
     e.preventDefault();
     !isOn ? setIsOn(true) : setIsOn(false);
     setInput("");
-    setMovieTitle(input);
+    // setMovieTitle(input);
   }
 
   return (
