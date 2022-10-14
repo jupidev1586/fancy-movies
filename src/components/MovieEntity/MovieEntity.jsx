@@ -23,7 +23,6 @@ const MovieEntity = ({ movieTitle }) => {
     title
   } = movieData;
   
-  console.log('movieData =====>', movieData)
 
   return (
     <div className={ styles.MovieEntity } id="movie-entity">

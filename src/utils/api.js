@@ -6,11 +6,6 @@ const GET = async(type, specific, ext="") => {
   return await res.json();
 }
 
-const GETSEARCH = async(type, specific, ext) => {
-  const res = await fetch(BASE_URL + type + '/&language=en-US' + specific + API_KEY + ext);
-  return await res.json();
-}
-
 const GETSERIES = async(type, section, ext) => {
   const res = await fetch(`${BASE_URL}${type}/${section}${API_KEY}${ext}`);
   return res.json();

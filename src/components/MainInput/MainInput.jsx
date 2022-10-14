@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { GETSEARCH } from "../../utils/api";
 import styles from './index.module.scss';
 
 const MainInput = ({ input, setInput, onSubmit, onHandleSubmit, setMovieTitle, isOn }) => {
@@ -23,8 +22,6 @@ const MainInput = ({ input, setInput, onSubmit, onHandleSubmit, setMovieTitle, i
       .then((res) => res.json())
       .then((data) => {
         setIsData(data);
-        console.log('data===>', data);
-        console.log('isData===>', isData)
       });
     }
   }, [input]);
