@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <div className={styles.Navbar}>
       <div className={styles.logo}>
-        <a href="#series-list">
+        <a href="#series-list" className={styles.logoHref}>
           <img src="/logo.png" alt="" height="40"/>
           <span>KING OF VIDEO</span>
         </a>

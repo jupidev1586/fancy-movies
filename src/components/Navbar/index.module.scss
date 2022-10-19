@@ -12,7 +12,7 @@
   .logo {
     display: flex;
     align-items: center;
-    padding: 10px 10px 5px;
+    padding: 0 10px 5px;
   }
   ul {
     display: flex;
@@ -26,6 +26,7 @@
     text-transform: uppercase;
   }
   li {
+    display: flex;
     &::after {
       content: " | ";
       padding-left: 10px;
@@ -36,8 +37,11 @@
     text-decoration: none;
     color: white;
     font-weight: 600;
-    display: flex;
-    align-items: center;
+    &.logoHref {
+      display: flex;
+      align-items: center;
+    }
+    
     @media (max-width: 767.98px) {
       font-size: 12px;
     }
