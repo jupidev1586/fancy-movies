@@ -29,7 +29,7 @@ const MovieEntity = ({ movieTitle }) => {
       <div className={ styles.info }>
         <div className={ styles.info__title }>
           <h1>{ title }</h1>
-          <p>Overview</p>
+          <p><b>Overview</b></p>
           <p>{ overview }</p>
         </div>
         <div className={ styles.info__bottom }>
