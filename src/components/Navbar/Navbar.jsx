@@ -6,7 +6,9 @@ const Navbar = () => {
   return (
     <div className={styles.Navbar}>
       <div className={styles.logo}>
-				<img src="/logo.png" alt="" height="40"/>
+        <a href="#series-list">
+          <img src="/logo.png" alt="" height="40"/>
+          </a>
 			</div>
       <ul>
         <li>
