@@ -8,7 +8,8 @@ const Navbar = () => {
       <div className={styles.logo}>
         <a href="#series-list">
           <img src="/logo.png" alt="" height="40"/>
-          </a>
+          <span>KING OF VIDEO</span>
+        </a>
 			</div>
       <ul>
         <li>
